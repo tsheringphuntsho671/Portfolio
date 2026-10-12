@@ -1,4 +1,8 @@
 
+/* ========================================
+   1. GLOBAL STYLES
+======================================== */
+
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +11,15 @@
 }
 
 :root {
-    --primary: #222;
-    --secondary: #666;
+    --primary: #222222;
+    --secondary: #666666;
     --background: #f7f7f7;
-    --white: #fff;
+    --white: #ffffff;
     --border: #e4e4e4;
     --shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    --heart: #d7263d;
+    --star: #f4b400;
+    --success: #167444;
 }
 
 html {
@@ -54,24 +61,35 @@ button:focus-visible,
 a:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-    outline: 3px solid #777;
+    outline: 3px solid #777777;
     outline-offset: 3px;
 }
 
-/* HEADER */
+img {
+    max-width: 100%;
+}
+
+
+/* ========================================
+   2. HEADER AND NAVIGATION
+======================================== */
 
 header {
     position: sticky;
     top: 0;
     z-index: 1000;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 20px;
+
     padding: 12px 5%;
-     background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
+
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
+
     border-bottom: 1px solid var(--border);
 }
 
@@ -79,6 +97,7 @@ header {
     display: flex;
     align-items: center;
     gap: 12px;
+
     text-decoration: none;
     color: var(--primary);
     font-weight: 800;
@@ -87,9 +106,12 @@ header {
 #headerimg {
     width: 48px;
     height: 48px;
+
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--primary);
+
+    flex-shrink: 0;
 }
 
 nav {
@@ -102,13 +124,16 @@ nav a {
     display: flex;
     align-items: center;
     gap: 8px;
+
     padding: 10px 14px;
-    border-radius: 10px;
-    text-decoration: none;
+
     color: var(--primary);
+    text-decoration: none;
     font-size: 0.9rem;
     font-weight: 600;
-    transition: 0.25s;
+
+    border-radius: 10px;
+    transition: background 0.25s, color 0.25s;
 }
 
 nav a:hover,
@@ -117,17 +142,33 @@ nav a.active {
     color: var(--white);
 }
 
+nav a i {
+    font-size: 1rem;
+}
+
+/* Hamburger and close buttons */
+
 .hamburger,
 .closebtn {
     display: none;
-    border: 0;
+
+    padding: 10px;
+
+    border: none;
+    border-radius: 8px;
     background: transparent;
+
     color: var(--primary);
     font-size: 1.5rem;
-    padding: 8px;
+    cursor: pointer;
+
+    z-index: 1003;
 }
 
-/* GENERAL SECTIONS */
+
+/* ========================================
+   3. GENERAL SECTIONS
+======================================== */
 
 .section-container {
     width: min(1200px, 100%);
@@ -135,16 +176,23 @@ nav a.active {
     padding: 90px 25px;
 }
 
+
+/* ========================================
+   4. HOME SECTION
+======================================== */
+
 #home {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
+
     min-height: 85vh;
 }
 
 .hero-content {
     flex: 1;
+    min-width: 0;
 }
 
 .hero-title-sub {
@@ -153,26 +201,32 @@ nav a.active {
 }
 
 .hero-title-main {
+    margin: 12px 0 20px;
+
     font-size: clamp(2.2rem, 5vw, 4rem);
     font-weight: 800;
     line-height: 1.15;
-    margin: 12px 0 20px;
+
     overflow-wrap: anywhere;
 }
 
 .badge {
     display: inline-block;
+
+    padding: 7px 17px;
+
     background: var(--primary);
     color: var(--white);
-    padding: 7px 17px;
+
     border-radius: 30px;
+
     font-size: 0.88rem;
     font-weight: 600;
 }
 
 .hero-description {
-    margin-top: 20px;
     max-width: 480px;
+    margin-top: 20px;
     color: var(--secondary);
 }
 
@@ -183,17 +237,26 @@ nav a.active {
     margin-top: 25px;
 }
 
+/* Buttons */
+
 .btn {
     display: inline-flex;
     justify-content: center;
     align-items: center;
     gap: 9px;
+
     padding: 12px 20px;
-    border-radius: 30px;
+
     border: 1px solid transparent;
+    border-radius: 30px;
+
     text-decoration: none;
     font-weight: 600;
-    transition: 0.25s ease;
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        color 0.25s ease;
 }
 
 .btn-primary {
@@ -202,14 +265,14 @@ nav a.active {
 }
 
 .btn-primary:hover {
-    background: #444;
+    background: #444444;
     transform: translateY(-3px);
 }
 
 .btn-secondary {
     background: var(--white);
     color: var(--primary);
-    border-color: #ccc;
+    border-color: #cccccc;
 }
 
 .btn-secondary:hover {
@@ -221,39 +284,52 @@ nav a.active {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-items: center;
+    min-width: 0;
 }
 
 #phuntsho {
     width: clamp(220px, 30vw, 350px);
     height: clamp(220px, 30vw, 350px);
+
     object-fit: cover;
     border-radius: 50%;
     border: 8px solid var(--white);
+
     box-shadow: var(--shadow);
-    transition: transform 0.4s;
+    transition: transform 0.4s ease;
 }
 
 #phuntsho:hover {
     transform: scale(1.04);
 }
 
-/* ABOUT AND SKILLS */
+
+/* ========================================
+   5. ABOUT SECTION
+======================================== */
 
 .section-header {
-    text-align: center;
     max-width: 800px;
     margin: 0 auto 45px;
+    text-align: center;
 }
 
 .section-header h2 {
+    margin-bottom: 15px;
+
     font-size: clamp(1.8rem, 4vw, 2.6rem);
     font-weight: 800;
-    margin-bottom: 15px;
 }
 
 .section-header p {
     color: var(--secondary);
 }
+
+
+/* ========================================
+   6. SKILL CARDS
+======================================== */
 
 .grid-container {
     display: grid;
@@ -264,15 +340,22 @@ nav a.active {
 .card {
     min-width: 0;
     padding: 22px;
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    box-shadow: var(--shadow);
+
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: var(--shadow);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
 }
 
 .card:hover {
@@ -281,10 +364,13 @@ nav a.active {
 }
 
 .card img {
+    display: block;
     width: 100%;
-    height: 300px;
+    height: 220px;
+
     object-fit: cover;
     border-radius: 12px;
+
     margin-bottom: 20px;
 }
 
@@ -298,29 +384,38 @@ nav a.active {
     font-size: 0.94rem;
 }
 
+
+/* ========================================
+   7. SKILL LIKE BUTTONS
+======================================== */
+
 .like-btn {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     gap: 8px;
+
     margin-top: auto;
     padding: 10px 18px;
-    border: 1px solid var(--border);
-    border-radius: 25px;
+
     background: var(--white);
     color: var(--primary);
+
+    border: 1px solid var(--border);
+    border-radius: 25px;
+
     font-weight: 600;
-    transition: 0.25s;
+    transition: all 0.25s ease;
 }
 
 .like-btn:hover {
-    background: #eee;
+    background: #eeeeee;
     transform: scale(1.04);
 }
 
 .like-btn.liked {
-    color: #d7263d;
     background: #fff0f2;
+    color: var(--heart);
     border-color: #f4b5bf;
 }
 
@@ -332,16 +427,21 @@ nav a.active {
     font-variant-numeric: tabular-nums;
 }
 
-/* CONTACT */
+
+/* ========================================
+   8. CONTACT SECTION
+======================================== */
 
 .contact-card {
     max-width: 600px;
     margin: 0 auto;
     padding: 35px 25px;
-    text-align: center;
+
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 18px;
+
+    text-align: center;
     box-shadow: var(--shadow);
 }
 
@@ -353,19 +453,29 @@ nav a.active {
     margin-right: 8px;
 }
 
-/* MODALS */
+
+/* ========================================
+   9. ALL POPUP MODALS
+======================================== */
 
 .modal {
     display: none;
+
     position: fixed;
     inset: 0;
     z-index: 2000;
+
     justify-content: center;
     align-items: center;
+
     padding: 18px;
+
     background: rgba(0, 0, 0, 0.65);
     backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+
     overflow-y: auto;
+    overscroll-behavior: contain;
 }
 
 .modal.show {
@@ -375,20 +485,28 @@ nav a.active {
 
 .modal-content {
     position: relative;
+
     width: 100%;
     max-width: 460px;
     max-height: 90vh;
+    max-height: 90dvh;
+
     overflow-y: auto;
+    overscroll-behavior: contain;
+
     padding: 35px;
-    border-radius: 20px;
+
     background: var(--white);
+    border-radius: 20px;
+
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+
     animation: slideUp 0.3s ease;
 }
 
 .modal-content h2 {
-    text-align: center;
     margin-bottom: 18px;
+    text-align: center;
     font-size: 1.6rem;
 }
 
@@ -400,31 +518,51 @@ nav a.active {
     position: absolute;
     top: 13px;
     right: 15px;
+
     display: grid;
     place-items: center;
+
     width: 36px;
     height: 36px;
+
     border: none;
     border-radius: 50%;
-    background: #eee;
+
+    background: #eeeeee;
     color: var(--primary);
+
     font-size: 1.1rem;
+    transition: background 0.2s;
 }
 
 .modal-close:hover {
-    background: #ddd;
+    background: #dddddd;
 }
 
 .modal-icon {
     display: grid;
     place-items: center;
+
     width: 65px;
     height: 65px;
+
     margin: 0 auto 18px;
+
     border-radius: 50%;
-    background: #eee;
+    background: #eeeeee;
+
     font-size: 1.7rem;
 }
+
+.full-btn {
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+/* ========================================
+   10. CONTACT FORM POPUP
+======================================== */
 
 .modal-description {
     color: var(--secondary);
@@ -438,47 +576,70 @@ nav a.active {
 
 #contactForm label,
 .rating-content label {
-    font-weight: 600;
     font-size: 0.92rem;
+    font-weight: 600;
 }
 
 #contactForm input,
 #contactForm textarea,
 #ratingFeedback {
+    display: block;
     width: 100%;
+    min-width: 0;
+
     padding: 12px 14px;
     margin-bottom: 8px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-    background: #fff;
+
+    background: var(--white);
     color: var(--primary);
-    resize: vertical;
+
+    border: 1px solid #cccccc;
+    border-radius: 10px;
+
+    outline-offset: 2px;
 }
 
 #contactForm input:focus,
 #contactForm textarea:focus,
 #ratingFeedback:focus {
-    border-color: #555;
+    border-color: #555555;
 }
 
-.full-btn {
-    width: 100%;
-    margin-top: 10px;
+#contactForm textarea,
+#ratingFeedback {
+    resize: vertical;
+}
+
+
+/* ========================================
+   11. STAR RATING POPUP
+======================================== */
+
+.rating-content {
+    text-align: center;
 }
 
 .stars {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
     gap: 8px;
+
     margin: 20px 0 12px;
 }
 
 .stars button {
+    padding: 2px;
+
     border: none;
     background: transparent;
-    color: #ccc;
+    color: #cccccc;
+
     font-size: clamp(2rem, 8vw, 2.6rem);
-    transition: transform 0.2s, color 0.2s;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
 }
 
 .stars button:hover {
@@ -486,52 +647,85 @@ nav a.active {
 }
 
 .stars button.selected {
-    color: #f4b400;
+    color: var(--star);
+}
+
+#ratingText {
+    min-height: 28px;
+    color: var(--secondary);
+}
+
+#ratingFeedback {
+    margin-top: 8px;
+    margin-bottom: 10px;
 }
 
 .success-message {
-    color: #167444;
-    font-weight: 600;
     margin-top: 12px;
+    color: var(--success);
+    font-weight: 600;
 }
 
-/* TOAST */
+
+/* ========================================
+   12. TOAST POPUP NOTIFICATION
+======================================== */
 
 .toast {
     position: fixed;
     bottom: 25px;
     left: 50%;
     z-index: 3000;
+
     width: max-content;
     max-width: calc(100% - 30px);
+
     padding: 13px 20px;
+
+    background: #222222;
+    color: var(--white);
+
     border-radius: 12px;
-    background: #222;
-    color: white;
     box-shadow: var(--shadow);
+
     text-align: center;
+
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
+
     transform: translate(-50%, 20px);
-    transition: 0.3s;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease,
+        visibility 0.3s ease;
 }
 
 .toast.show {
     opacity: 1;
+    visibility: visible;
     transform: translate(-50%, 0);
 }
 
-/* FOOTER */
+
+/* ========================================
+   13. FOOTER
+======================================== */
 
 footer {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 30px 20px;
+
     margin-top: 25px;
-    border-top: 1px solid var(--border);
+    padding: 30px 20px;
+
     background: var(--white);
+    border-top: 1px solid var(--border);
+
     text-align: center;
 }
 
@@ -549,11 +743,19 @@ footer p {
     text-decoration: underline;
 }
 
-/* ANIMATIONS */
+
+/* ========================================
+   14. ANIMATIONS
+======================================== */
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
 
 @keyframes slideUp {
@@ -561,13 +763,17 @@ footer p {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-/* TABLETS */
+
+/* ========================================
+   15. TABLET RESPONSIVENESS
+======================================== */
 
 @media (max-width: 900px) {
     .section-container {
@@ -587,65 +793,129 @@ footer p {
     }
 }
 
-/* MOBILE NAVIGATION */
 
-@media (max-width: 650px) {
+/* ========================================
+   16. RESPONSIVE HAMBURGER MENU
+======================================== */
+
+@media (max-width: 768px) {
     header {
         padding: 10px 16px;
+        gap: 10px;
     }
 
     .header-brand {
         gap: 9px;
+        min-width: 0;
         font-size: 0.9rem;
     }
 
     #headerimg {
         width: 42px;
         height: 42px;
+        flex-shrink: 0;
     }
 
+    /* Show hamburger */
     .hamburger {
         display: block;
         margin-left: auto;
     }
 
+    /* Slide-in navigation panel */
     nav {
         position: fixed;
         top: 0;
-        right: -100%;
-        width: min(82%, 320px);
+        right: 0;
+
+        width: min(82vw, 320px);
+        height: 100vh;
         height: 100dvh;
-        padding: 90px 22px 30px;
-        background: var(--white);
+
+        padding: 80px 20px 30px;
+
+        display: flex;
         flex-direction: column;
         align-items: stretch;
         gap: 12px;
-        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
-        transition: right 0.3s ease;
-        z-index: 1000;
+
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.15);
+
+        overflow-x: hidden;
+        overflow-y: auto;
+        overscroll-behavior: contain;
+
+        transform: translateX(100%);
+        visibility: hidden;
+
+        transition:
+            transform 0.3s ease,
+            visibility 0.3s ease;
+
+        z-index: 1001;
     }
 
+    /* Open menu */
     nav.active {
-        right: 0;
+        transform: translateX(0);
+        visibility: visible;
     }
 
     nav a {
+        width: 100%;
         padding: 14px;
         font-size: 1rem;
+        border-radius: 10px;
     }
 
+    /* Hide hamburger and show X */
     header.menu-open .hamburger {
         display: none;
     }
 
     header.menu-open .closebtn {
         display: block;
+
         position: fixed;
-        top: 12px;
-        right: 16px;
-        z-index: 1002;
+        top: 10px;
+        right: 15px;
+
+        z-index: 1003;
     }
 
+    /* Dark overlay behind the menu */
+    header.menu-open::after {
+        content: "";
+
+        position: fixed;
+        inset: 0;
+
+        width: 100vw;
+        height: 100vh;
+        height: 100dvh;
+
+        background: rgba(0, 0, 0, 0.35);
+
+        z-index: 999;
+        pointer-events: none;
+    }
+
+    /* Home section */
+    #home {
+        gap: 30px;
+    }
+}
+
+
+/* ========================================
+   17. MOBILE RESPONSIVENESS
+======================================== */
+
+@media (max-width: 600px) {
     .section-container {
         padding: 55px 18px;
     }
@@ -668,14 +938,18 @@ footer p {
         font-size: clamp(2rem, 8vw, 2.8rem);
     }
 
+    .hero-title-sub {
+        font-size: 1.1rem;
+    }
+
     #phuntsho {
         width: 210px;
         height: 210px;
     }
 
     .hero-action-group {
-        width: 100%;
         flex-direction: column;
+        width: 100%;
     }
 
     .hero-action-group .btn {
@@ -706,11 +980,19 @@ footer p {
     }
 }
 
-/* SMALL PHONES */
+
+/* ========================================
+   18. EXTRA SMALL PHONES
+======================================== */
 
 @media (max-width: 360px) {
+    header {
+        padding: 8px 10px;
+    }
+
     .header-brand {
-        font-size: 0.8rem;
+        gap: 7px;
+        font-size: 0.78rem;
     }
 
     #headerimg {
@@ -718,23 +1000,44 @@ footer p {
         height: 36px;
     }
 
+    nav {
+        width: min(88vw, 290px);
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
     .hero-title-main {
         font-size: 1.9rem;
+    }
+
+    .modal {
+        padding: 10px;
     }
 
     .modal-content {
         padding: 28px 16px;
     }
+
+    .stars {
+        gap: 5px;
+    }
 }
 
-/* REDUCE MOTION FOR ACCESSIBILITY */
+
+/* ========================================
+   19. ACCESSIBILITY
+======================================== */
 
 @media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
     *,
     *::before,
     *::after {
-        scroll-behavior: auto !important;
         animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
 }
