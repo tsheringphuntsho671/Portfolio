@@ -1,325 +1,352 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tshering Phuntsho | Portfolio</title>
-    <link rel="shortcut icon" href="./img/fav icon.jpg" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/fav icon.jpg" type="image/x-icon" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
 
-    <link rel="stylesheet" href="./CSS/style.css">
-</head>
+    <link rel="stylesheet" href="./CSS/style.css" />
+  </head>
 
-<body>
-
-<header id="main-header">
-    <a href="#home" class="header-brand">
-        <img src="./img/my photo.jpg" id="headerimg"
-             alt="Tshering Phuntsho logo">
+  <body>
+    <header id="main-header">
+      <a href="#home" class="header-brand">
+        <img
+          src="./img/my photo.jpg"
+          id="headerimg"
+          alt="Tshering Phuntsho logo"
+        />
         <span>Tshering Phuntsho</span>
-    </a>
+      </a>
 
-    <button class="hamburger" id="hamburger"
-            aria-label="Open navigation" aria-expanded="false">
+      <button
+        class="hamburger"
+        id="hamburger"
+        aria-label="Open navigation"
+        aria-expanded="false"
+      >
         <i class="fa-solid fa-bars"></i>
-    </button>
+      </button>
 
-    <button class="closebtn" id="closebtn"
-            aria-label="Close navigation">
+      <button class="closebtn" id="closebtn" aria-label="Close navigation">
         <i class="fa-solid fa-xmark"></i>
-    </button>
+      </button>
 
-    <nav id="nav-menu">
+      <nav id="nav-menu">
         <a href="#home"><i class="fa-solid fa-house"></i> HOME</a>
         <a href="#about"><i class="fa-solid fa-circle-user"></i> ABOUT</a>
         <a href="#skills"><i class="fa-solid fa-code"></i> SKILLS</a>
         <a href="#contact"><i class="fa-solid fa-envelope"></i> CONTACT</a>
-    </nav>
-</header>
+      </nav>
+    </header>
 
-<main>
-    <!-- HOME -->
-    <section id="home" class="section-container">
+    <main>
+      <!-- HOME -->
+      <section id="home" class="section-container">
         <div class="hero-content">
-            <p class="hero-title-sub">Hello, I'm</p>
-            <h1 class="hero-title-main">Tshering Phuntsho</h1>
+          <p class="hero-title-sub">Hello, I'm</p>
+          <h1 class="hero-title-main">Tshering Phuntsho</h1>
 
-            <span class="badge">Front-End Web Developer</span>
+          <span class="badge">Front-End Web Developer</span>
 
-            <p class="hero-description">
-                ICT enthusiast passionate about web development,
-                coding, and technology.
-            </p>
+          <p class="hero-description">
+            ICT enthusiast passionate about web development, coding, and
+            technology.
+          </p>
 
-            <div class="hero-action-group">
-                <a class="btn btn-primary"
-                   href="./~$hering phuntsho cv.docx" download>
-                    <i class="fa-solid fa-download"></i> Download CV
-                </a>
+          <div class="hero-action-group">
+            <a
+              class="btn btn-primary"
+              href="./~$hering phuntsho cv.docx"
+              download
+            >
+              <i class="fa-solid fa-download"></i> Download CV
+            </a>
 
-                <button class="btn btn-secondary" id="moreInfoBtn">
-                    <i class="fa-solid fa-circle-info"></i>
-                    More Information
-                </button>
-            </div>
+            <button class="btn btn-secondary" id="moreInfoBtn">
+              <i class="fa-solid fa-circle-info"></i>
+              More Information
+            </button>
+          </div>
         </div>
 
         <div class="hero-avatar-wrapper">
-            <img id="phuntsho"
-                 src="./img/my photo.jpg"
-                 alt="Portrait of Tshering Phuntsho">
+          <img
+            id="phuntsho"
+            src="./img/my photo.jpg"
+            alt="Portrait of Tshering Phuntsho"
+          />
         </div>
-    </section>
+      </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section-container">
+      <!-- ABOUT -->
+      <section id="about" class="section-container">
         <div class="section-header">
-            <h2>About Me</h2>
+          <h2>About Me</h2>
+          <p>
+            Highly motivated and results-driven ICT enthusiast with strong
+            computing skills, hands-on training at DSP Yonphula, and experience
+            from Gyalsung. Passionate about system management, web development,
+            and technology solutions.
+          </p>
+        </div>
+
+        <div class="grid-container">
+          <!-- SKILL 1 -->
+          <article class="card skill-card">
+            <img src="./img/ict.jpg" />
+
+            <h3>Basic ICT Skills</h3>
+
             <p>
-                Highly motivated and results-driven ICT enthusiast with
-                strong computing skills, hands-on training at DSP Yonphula,
-                and experience from Gyalsung. Passionate about system
-                management, web development, and technology solutions.
+              Knowledge of computer applications, digital tools, information
+              technology, and introductory applied AI.
             </p>
+
+            <button class="like-btn" data-skill="ict" aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+              Favourite <span class="like-count">0</span>
+            </button>
+          </article>
+
+          <!-- SKILL 2 -->
+          <article class="card skill-card">
+            <img src="./img/coding.jpg" />
+
+            <h3>Basic Coding</h3>
+
+            <p>
+              Learning to create websites using HTML, CSS, and JavaScript to
+              build attractive and interactive web experiences.
+            </p>
+
+            <button class="like-btn" data-skill="coding" aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+              Like <span class="like-count">0</span>
+            </button>
+          </article>
+
+          <!-- GYALSUNG -->
+          <article class="card skill-card">
+            <img src="./img/tp military.png" alt="Gyalsung experience" />
+
+            <h3>Gyalsung</h3>
+
+            <p>
+              Bhutan's national service program promotes discipline, essential
+              skills, teamwork, and a shared sense of civic responsibility.
+            </p>
+
+            <button class="like-btn" data-skill="gyalsung" aria-pressed="false">
+              <i class="fa-regular fa-heart"></i>
+              Like <span class="like-count">0</span>
+            </button>
+          </article>
         </div>
+      </section>
 
-        <div  class="grid-container">
-
-            <!-- SKILL 1 -->
-            <article class="card skill-card">
-                <img
-                    src="./img/ict.jpg">
-
-                <h3>Basic ICT Skills</h3>
-
-                <p>
-                    Knowledge of computer applications, digital tools,
-                    information technology, and introductory applied AI.
-                </p>
-
-                <button class="like-btn" data-skill="ict"
-                        aria-pressed="false">
-                    <i class="fa-regular fa-heart"></i>
-                    Like <span class="like-count">0</span>
-                </button>
-            </article>
-
-            <!-- SKILL 2 -->
-            <article class="card skill-card">
-                <img
-                    src="./img/coding.jpg">
-
-                <h3>Basic Coding</h3>
-
-                <p>
-                    Learning to create websites using HTML, CSS, and
-                    JavaScript to build attractive and interactive
-                    web experiences.
-                </p>
-
-                <button class="like-btn" data-skill="coding"
-                        aria-pressed="false">
-                    <i class="fa-regular fa-heart"></i>
-                    Like <span class="like-count">0</span>
-                </button>
-            </article>
-
-            <!-- GYALSUNG -->
-            <article class="card skill-card">
-                <img
-                    src="./img/tp military.png"
-                    alt="Gyalsung experience">
-
-                <h3>Gyalsung</h3>
-
-                <p>
-                    Bhutan's national service program promotes discipline,
-                    essential skills, teamwork, and a shared sense of
-                    civic responsibility.
-                </p>
-
-                <button class="like-btn" data-skill="gyalsung"
-                        aria-pressed="false">
-                    <i class="fa-regular fa-heart"></i>
-                    Like <span class="like-count">0</span>
-                </button>
-            </article>
-
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="section-container">
+      <!-- CONTACT -->
+      <section id="contact" class="section-container">
         <div class="section-header">
-            <h2>Get In Touch</h2>
-            <p>
-                Feel free to contact me for collaborations,
-                opportunities, or project inquiries.
-            </p>
+          <h2>Get In Touch</h2>
+          <p>
+            Feel free to contact me for collaborations, opportunities, or
+            project inquiries.
+          </p>
         </div>
 
         <div class="contact-card">
-            <p>
-                <i class="fa-solid fa-envelope"></i>
-                tsheringphuntsho671@gmail.com
-            </p>
+          <p>
+            <i class="fa-solid fa-envelope"></i>
+            tsheringphuntsho671@gmail.com
+          </p>
 
-            <p>
-                <i class="fa-solid fa-location-dot"></i>
-                Bhutan
-            </p>
+          <p>
+            <i class="fa-solid fa-location-dot"></i>
+            Bhutan
+          </p>
 
-            <button class="btn btn-primary" id="contactBtn">
-                <i class="fa-solid fa-paper-plane"></i>
-                Send Message
-            </button>
+          <button class="btn btn-primary" id="contactBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Send Message
+          </button>
         </div>
-    </section>
-</main>
+      </section>
+    </main>
 
-<!-- MORE INFORMATION MODAL -->
-<div class="modal" id="infoModal" role="dialog"
-     aria-modal="true" aria-labelledby="infoTitle">
-    <div class="modal-content">
-        <button class="modal-close" data-close="infoModal"
-                aria-label="Close dialog">
-            <i class="fa-solid fa-xmark"></i>
+    <!-- MORE INFORMATION MODAL -->
+    <div
+      class="modal"
+      id="infoModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="infoTitle"
+    >
+      <div class="modal-content">
+        <button
+          class="modal-close"
+          data-close="infoModal"
+          aria-label="Close dialog"
+        >
+          <i class="fa-solid fa-xmark"></i>
         </button>
 
         <div class="modal-icon">
-            <i class="fa-solid fa-user-astronaut"></i>
+          <i class="fa-solid fa-user-astronaut"></i>
         </div>
 
         <h2 id="infoTitle">Developer Details</h2>
 
+        <p><strong>Name:</strong> Tshering Phuntsho</p>
+        <p><strong>Role:</strong> Front-End Web Developer</p>
         <p>
-            <strong>Name:</strong> Tshering Phuntsho
+          <strong>Interests:</strong> ICT, coding, web design, and technology.
         </p>
-        <p>
-            <strong>Role:</strong> Front-End Web Developer
-        </p>
-        <p>
-            <strong>Interests:</strong> ICT, coding, web design,
-            and technology.
-        </p>
-        <p>
-            <strong>Location:</strong> Bhutan
-        </p>
+        <p><strong>Location:</strong> Bhutan</p>
 
-        <button class="btn btn-primary full-btn"
-                data-close="infoModal">
-            Close
+        <button class="btn btn-primary full-btn" data-close="infoModal">
+          Close
         </button>
+      </div>
     </div>
-</div>
 
-<!-- CONTACT FORM MODAL -->
-<div class="modal" id="contactModal" role="dialog"
-     aria-modal="true" aria-labelledby="contactTitle">
-    <div class="modal-content">
-        <button class="modal-close" data-close="contactModal"
-                aria-label="Close dialog">
-            <i class="fa-solid fa-xmark"></i>
+    <!-- CONTACT FORM MODAL -->
+    <div
+      class="modal"
+      id="contactModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="contactTitle"
+    >
+      <div class="modal-content">
+        <button
+          class="modal-close"
+          data-close="contactModal"
+          aria-label="Close dialog"
+        >
+          <i class="fa-solid fa-xmark"></i>
         </button>
 
         <div class="modal-icon">
-            <i class="fa-solid fa-envelope-open-text"></i>
+          <i class="fa-solid fa-envelope-open-text"></i>
         </div>
 
         <h2 id="contactTitle">Send Me a Message</h2>
         <p class="modal-description">
-            Fill in the details below to contact me.
+          Fill in the details below to contact me.
         </p>
 
         <form id="contactForm">
-            <label for="senderName">Your Name</label>
-            <input type="text" id="senderName"
-                   placeholder="Enter your name" required>
+          <label for="senderName">Your Name</label>
+          <input
+            type="text"
+            id="senderName"
+            placeholder="Enter your name"
+            required
+          />
 
-            <label for="senderEmail">Your Email</label>
-            <input type="email" id="senderEmail"
-                   placeholder="Enter your email" required>
+          <label for="senderEmail">Your Email</label>
+          <input
+            type="email"
+            id="senderEmail"
+            placeholder="Enter your email"
+            required
+          />
 
-            <label for="senderMessage">Your Message</label>
-            <textarea id="senderMessage" rows="4"
-                      placeholder="Write your message..."
-                      required></textarea>
+          <label for="senderMessage">Your Message</label>
+          <textarea
+            id="senderMessage"
+            rows="4"
+            placeholder="Write your message..."
+            required
+          ></textarea>
 
-            <button type="submit" class="btn btn-primary full-btn">
-                <i class="fa-solid fa-paper-plane"></i>
-                Continue to Send
-            </button>
+          <button type="submit" class="btn btn-primary full-btn">
+            <i class="fa-solid fa-paper-plane"></i>
+            Continue to Send
+          </button>
         </form>
+      </div>
     </div>
-</div>
 
-<!-- PORTFOLIO RATING POPUP -->
-<div class="modal" id="ratingModal" role="dialog"
-     aria-modal="true" aria-labelledby="ratingTitle">
-    <div class="modal-content rating-content">
-        <button class="modal-close" data-close="ratingModal"
-                aria-label="Close dialog">
-            <i class="fa-solid fa-xmark"></i>
+    <!-- PORTFOLIO RATING POPUP -->
+    <div
+      class="modal"
+      id="ratingModal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="ratingTitle"
+    >
+      <div class="modal-content rating-content">
+        <button
+          class="modal-close"
+          data-close="ratingModal"
+          aria-label="Close dialog"
+        >
+          <i class="fa-solid fa-xmark"></i>
         </button>
 
         <div class="modal-icon">
-            <i class="fa-solid fa-star"></i>
+          <i class="fa-solid fa-star"></i>
         </div>
 
         <h2 id="ratingTitle">Rate My Portfolio</h2>
         <p>How would you rate your experience?</p>
 
-        <div class="stars" id="ratingStars"
-             role="group" aria-label="Choose a rating from 1 to 5">
-            <button type="button" data-rating="1"
-                    aria-label="1 star">★</button>
-            <button type="button" data-rating="2"
-                    aria-label="2 stars">★</button>
-            <button type="button" data-rating="3"
-                    aria-label="3 stars">★</button>
-            <button type="button" data-rating="4"
-                    aria-label="4 stars">★</button>
-            <button type="button" data-rating="5"
-                    aria-label="5 stars">★</button>
+        <div
+          class="stars"
+          id="ratingStars"
+          role="group"
+          aria-label="Choose a rating from 1 to 5"
+        >
+          <button type="button" data-rating="1" aria-label="1 star">★</button>
+          <button type="button" data-rating="2" aria-label="2 stars">★</button>
+          <button type="button" data-rating="3" aria-label="3 stars">★</button>
+          <button type="button" data-rating="4" aria-label="4 stars">★</button>
+          <button type="button" data-rating="5" aria-label="5 stars">★</button>
         </div>
 
-        <p id="ratingText" aria-live="polite">
-            Select your rating.
-        </p>
+        <p id="ratingText" aria-live="polite">Select your rating.</p>
 
         <label for="ratingFeedback">Optional feedback</label>
-        <textarea id="ratingFeedback" rows="3"
-                  placeholder="Tell me what you think..."></textarea>
+        <textarea
+          id="ratingFeedback"
+          rows="3"
+          placeholder="Tell me what you think..."
+        ></textarea>
 
         <button class="btn btn-primary full-btn" id="submitRating">
-            Submit Rating
+          Submit Rating
         </button>
 
-        <p id="ratingThanks" class="success-message"
-           aria-live="polite"></p>
+        <p id="ratingThanks" class="success-message" aria-live="polite"></p>
+      </div>
     </div>
-</div>
 
-<!-- TOAST MESSAGE -->
-<div id="toast" class="toast" role="status"
-     aria-live="polite"></div>
+    <!-- TOAST MESSAGE -->
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
 
-<footer>
-    <p>
-        &copy; <span id="year"></span> Tshering Phuntsho.
-        All Rights Reserved.
-    </p>
-    <a href="#home" class="back-to-top">
+    <footer>
+      <p>
+        &copy; <span id="year"></span> Tshering Phuntsho. All Rights Reserved.
+      </p>
+      <a href="#home" class="back-to-top">
         <i class="fa-solid fa-arrow-up"></i> Back to top
-    </a>
-</footer>
+      </a>
+    </footer>
 
-<script src="./JS/script.js"></script>
-</body>
+    <script src="./JS/script.js"></script>
+  </body>
 </html>
